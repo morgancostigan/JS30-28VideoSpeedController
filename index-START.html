@@ -26,7 +26,9 @@
     const min = .4; //minimum speed
     const max = 4; //maximum speed
     const height = Math.round(percentY * 100) + '%'; //clean round percentage
+    const playbackRate = percentY * (max - min) + min; //adjusts the playback rate based on height percentage 
     bar.style.height = height; //adjusts speed bar visually based on height percentage
+    bar.textContent = playbackRate.toFixed(1) + 'x'; //showing playbackRate to one decimal point within speed bar
     
     
     
