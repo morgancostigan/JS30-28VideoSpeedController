@@ -19,7 +19,7 @@
   const bar = speed.querySelector('.speed-bar');
   const video = document.querySelector('.flex');
 
-  speed.addEventListener('mousemove', function(e) {
+  function handleMove() {
     // console.log(e);
     const y = e.pageY - this.offsetTop; //measures y position within speed bar element
     const percentY = y / this.offsetHeight; //converts Y position to a percentage
@@ -30,11 +30,9 @@
     bar.style.height = height; //adjusts speed bar visually based on height percentage
     bar.textContent = playbackRate.toFixed(1) + 'x'; //showing playbackRate to one decimal point within speed bar
     video.playbackRate = playbackRate; //this does this
-    
-    
-    
-  
-  });//end speed eventListener
+  }//end handleMove function
+
+  speed.addEventListener('mousemove', handleMove);//end speed eventListener
 
 
 
